@@ -1,5 +1,6 @@
 package com.optimus.nnlt.service.impl
 
+import com.optimus.nnlt.model.Category
 import com.optimus.nnlt.repository.CategoryRepository
 import com.optimus.nnlt.service.CategoryService
 import org.springframework.beans.factory.annotation.Autowired

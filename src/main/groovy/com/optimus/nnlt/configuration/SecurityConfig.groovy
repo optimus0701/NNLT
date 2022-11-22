@@ -4,6 +4,7 @@ import com.optimus.nnlt.service.impl.CustomUserDetailService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.builders.WebSecurity
@@ -15,6 +16,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher
 
 @Configuration
 @EnableWebSecurity
+
 class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     GoogleOAuth2SuccessHandler googleOAuth2SuccessHandler;
@@ -67,8 +69,8 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
     }//config authenication & authorization
 
-    @Bean
-    PasswordEncoder bCryptPasswordEncoder(){
+    @Bean(name = "passwordEncoder")
+    static PasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
     }//ma hoa password
 

@@ -1,5 +1,6 @@
 package com.optimus.nnlt.service
 
+import com.optimus.nnlt.model.Category
 import org.springframework.stereotype.Service
 
 @Service
