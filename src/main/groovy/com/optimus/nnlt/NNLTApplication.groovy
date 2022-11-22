@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 
 
 @SpringBootApplication
-class NnltApplication {
+class NNLTApplication {
     static void main(String[] args) {
-        SpringApplication.run(NnltApplication, args)
+        SpringApplication.run(NNLTApplication, args)
     }
 
 }
