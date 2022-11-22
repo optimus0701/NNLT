@@ -1,44 +1,44 @@
 package com.optimus.nnlt.controller;
 
+import com.optimus.nnlt.dto.UserDTO;
+import com.optimus.nnlt.global.GlobalData;
 import com.optimus.nnlt.model.Role;
 import com.optimus.nnlt.model.User;
+import com.optimus.nnlt.repository.RoleRepository;
 import com.optimus.nnlt.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Controller
-public class LoginController {
-    @Autowired
-    private PasswordEncoder bCryptPasswordEncoder;
+class LoginController {
+    PasswordEncoder bCryptPasswordEncoder;
 
-    @Autowired
-    private UserRepository userRepository;
+    UserRepository userRepository;
 
-    @Autowired
-    private RoleRepository roleRepository;
+    RoleRepository roleRepository;
+
     @GetMapping("/login")
-    public String login(){
+    String login(){
         GlobalData.cart.clear();
         return "login";
     }//page login
 
     @GetMapping("/forgotpassword")
-    public String forgotPass(Model model){
+    String forgotPass(Model model) {
         model.addAttribute("userDTO", new UserDTO());
         return "forgotpassword";
     }
 
     @GetMapping("/register")
-    public String registerGet(Model model){
+    String registerGet(Model model){
         return "register";
     }
 
