@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service
 
 @Service
 class CustomUserDetailService implements UserDetailsService {
-    @Autowired(required = false)
+    @Autowired(required = true)
     UserService userService;
     @Override
-    UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Optional<User> user = userService.getUserByEmail(email);
-        user.orElseThrow({ -> new UsernameNotFoundException("User not found") });
+    UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Optional<User> user = userService.getUserByEmail(username);
+        user.orElseThrow(() -> new UsernameNotFoundException("User not found"));
         return user.map(CustomUserDetail::new).get(); // convert optional tu <User> sang <CustomUserDetail> sau do get() data tu optional
     }
 }

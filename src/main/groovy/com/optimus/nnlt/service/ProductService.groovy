@@ -4,7 +4,7 @@ import com.optimus.nnlt.model.Product
 import org.springframework.stereotype.Service
 
 @Service
-public interface ProductService {
+interface ProductService {
 
     List<Product> getAllProductByCategoryId(int id);
 
