@@ -4,14 +4,14 @@ import com.optimus.nnlt.model.Category
 import org.springframework.stereotype.Service
 
 @Service
-public interface CategoryService {
+interface CategoryService {
 
-    public List<Category> getAllCategory();
+    List<Category> getAllCategory();
 
-    public void updateCategory(Category category);
+    void updateCategory(Category category);
 
-    public void removeCategoryById(int id);
+    void removeCategoryById(int id);
 
-    public Optional<Category> getCategoryById(int id);
+    Optional<Category> getCategoryById(int id);
 
 }

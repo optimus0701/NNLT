@@ -1,4 +1,4 @@
-package com.optimus.nnlt.config
+package com.optimus.nnlt.configuration
 
 import com.optimus.nnlt.service.UserService
 import com.optimus.nnlt.service.impl.UserServiceImpl
